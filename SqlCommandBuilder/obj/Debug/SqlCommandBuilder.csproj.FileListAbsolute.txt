@@ -1,0 +1,10 @@
+S:\ChrisStuff\SqlCommandBuilder\SqlCommandBuilder\bin\Debug\SqlCommandBuilder.exe.config
+S:\ChrisStuff\SqlCommandBuilder\SqlCommandBuilder\bin\Debug\SqlCommandBuilder.exe
+S:\ChrisStuff\SqlCommandBuilder\SqlCommandBuilder\bin\Debug\SqlCommandBuilder.pdb
+S:\ChrisStuff\SqlCommandBuilder\SqlCommandBuilder\obj\Debug\SqlCommandBuilder.csprojResolveAssemblyReference.cache
+S:\ChrisStuff\SqlCommandBuilder\SqlCommandBuilder\obj\Debug\SqlCommandBuilder.ConnectWindow.resources
+S:\ChrisStuff\SqlCommandBuilder\SqlCommandBuilder\obj\Debug\SqlCommandBuilder.Form1.resources
+S:\ChrisStuff\SqlCommandBuilder\SqlCommandBuilder\obj\Debug\SqlCommandBuilder.Properties.Resources.resources
+S:\ChrisStuff\SqlCommandBuilder\SqlCommandBuilder\obj\Debug\SqlCommandBuilder.csproj.GenerateResource.Cache
+S:\ChrisStuff\SqlCommandBuilder\SqlCommandBuilder\obj\Debug\SqlCommandBuilder.exe
+S:\ChrisStuff\SqlCommandBuilder\SqlCommandBuilder\obj\Debug\SqlCommandBuilder.pdb
