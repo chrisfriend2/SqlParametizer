@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace SqlCommandBuilder
             txtResult.Multiline = true;
             txtResult.ScrollBars = ScrollBars.Horizontal;
         }
-
+        //open the connection window
         private void connectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConnectWindow cw = new ConnectWindow();
@@ -43,7 +44,7 @@ namespace SqlCommandBuilder
             cmbTables.DataSource = dtTables;
             cmbTables.DisplayMember = "TABLE_NAME";
         }
-
+        //get database schema
         private void schemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (goodConn)
@@ -55,7 +56,7 @@ namespace SqlCommandBuilder
                 MessageBox.Show("Select a valid database first.");
             }
         }
-
+        //get database schema
         private void getData_Click(object sender, EventArgs e)
         {
             if (goodConn)
@@ -72,7 +73,7 @@ namespace SqlCommandBuilder
         {
             MessageBox.Show(connString);
         }
-
+        //generate parameterized insert and addwithvalue statemets
         private void getInsert_Click(object sender, EventArgs e)
         {
             String statement = "SqlCommand " + txtCmdName.Text + " = new SqlCommand(\"INSERT INTO " + cmbTables.Text + " (";
@@ -105,6 +106,7 @@ namespace SqlCommandBuilder
             //MessageBox.Show(statement);
             txtResult.Text = statement;
         }
+        //get schema information
         private void btnLoadTable_Click(object sender, EventArgs e)
         {
             if (goodConn)
@@ -124,6 +126,7 @@ namespace SqlCommandBuilder
             }
         }
 
+        //generate parameterized update command and addwithvalue statements
         private void button1_Click(object sender, EventArgs e)
         {
             String statement = "SqlCommand " + txtCmdName.Text + " = new SqlCommand(\"UPDATE " + cmbTables.Text + " SET ";
@@ -150,6 +153,7 @@ namespace SqlCommandBuilder
             txtResult.Text = statement;
         }
 
+        //copy contents of output textbox to clipboard
         private void btnCopy_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(txtResult.Text);
@@ -158,6 +162,27 @@ namespace SqlCommandBuilder
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        //Write contents of output textbox to file
+        private void exportFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string path = "";
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.AddExtension = true;
+            sfd.Filter = "All files|*.*|Text file|*.txt";
+            sfd.DefaultExt = "txt";
+            try {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    path = sfd.FileName;
+                    File.WriteAllText(path, txtResult.Text);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

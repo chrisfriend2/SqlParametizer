@@ -90,8 +90,9 @@
             // exportFileToolStripMenuItem
             // 
             this.exportFileToolStripMenuItem.Name = "exportFileToolStripMenuItem";
-            this.exportFileToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
-            this.exportFileToolStripMenuItem.Text = "Export File";
+            this.exportFileToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.exportFileToolStripMenuItem.Text = "Export Command to File";
+            this.exportFileToolStripMenuItem.Click += new System.EventHandler(this.exportFileToolStripMenuItem_Click);
             // 
             // getToolStripMenuItem
             // 
